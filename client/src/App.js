@@ -2,9 +2,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import {Navbar,Footer,Home,ContactUs,NotFound} from "./components/MyComponents"
+import { FooterContainer } from './containers/footer'
+
 function App() {
   return (
     <Router>
@@ -14,7 +15,7 @@ function App() {
         <Route path="/ContactUs"> <ContactUs /> </Route>
         <Route path="*"> <NotFound /> </Route>
       </Switch>
-      <Footer />
+      <FooterContainer />
     </Router>
   );
 }

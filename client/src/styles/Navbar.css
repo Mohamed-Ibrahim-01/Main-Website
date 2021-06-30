@@ -1,0 +1,6 @@
+.navbar-btn{
+    text-decoration: none;
+}
+.Button:disabled{
+    background-color: #B00020;
+}
