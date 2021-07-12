@@ -1,16 +1,14 @@
-import Home from "./Home"
-import ContactUs from "./ContactUs"
-import Navbar from "./Navbar"
-import Footer from "./Footer"
-import NotFound from "./NotFound"
-import About from "./About"
-import Sponsors from "./Sponsors"
+import Home from "../containers/Home"
+import ContactUs from "../containers/ContactUs"
+import Navbar from "../containers/Navbar"
+import NotFound from "../containers/NotFound"
+import About from "../containers/About"
+import Sponsors from "../containers/Sponsors"
 
 export {
     Home,
     ContactUs,
     Navbar,
-    Footer,
     NotFound,
     About,
     Sponsors
