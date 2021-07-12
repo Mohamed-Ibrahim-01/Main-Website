@@ -3,13 +3,14 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import {Navbar,Footer,Home,ContactUs,NotFound} from "./components/MyComponents"
-import { FooterContainer } from './containers/footer'
+import {Home,ContactUs,NotFound} from "./components/MyComponents"
+import { FooterContainer } from './containers/Footer'
+import { NavBarContainer } from './containers/Navbar'
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      <NavBarContainer />
       <Switch>
         <Route exact path="/"> <Home /> </Route>
         <Route path="/ContactUs"> <ContactUs /> </Route>
