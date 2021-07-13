@@ -8,7 +8,6 @@ export function FooterContainer() {
 
                     <Footer.Column social>
                         <Footer.Title>About Beat</Footer.Title>
-
                         <Footer.Link href="/home">
                             Biomedical Engineering Awareness and Technologies
                             (BEAT)
@@ -16,32 +15,16 @@ export function FooterContainer() {
 
                         <div className="icons">
                             <Footer.Link href="#">
-                                {' '}
-                                <Footer.Icon
-                                    social
-                                    className="fab fa-facebook-square"
-                                />{' '}
+                                <Footer.Icon social className="fab fa-facebook-square" />
                             </Footer.Link>
                             <Footer.Link href="#">
-                                {' '}
-                                <Footer.Icon
-                                    social
-                                    className="fab fa-linkedin"
-                                />{' '}
+                                <Footer.Icon social className="fab fa-linkedin" />
                             </Footer.Link>
                             <Footer.Link href="#">
-                                {' '}
-                                <Footer.Icon
-                                    social
-                                    className="fab fa-github-square"
-                                />{' '}
+                                <Footer.Icon social className="fab fa-github-square" />
                             </Footer.Link>
                             <Footer.Link href="#">
-                                {' '}
-                                <Footer.Icon
-                                    social
-                                    className="fab fa-youtube-square"
-                                />{' '}
+                                <Footer.Icon social className="fab fa-youtube-square" />
                             </Footer.Link>
                         </div>
                     </Footer.Column>
