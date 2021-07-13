@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import {AppBar,Toolbar,Button} from '@material-ui/core'
+import {Link} from 'react-router-dom'
 
 
 //import {StyledAppBar, StyledToolBar, Logo, StyledLink} from './styles/navbar'
@@ -55,4 +56,7 @@ export const StyledButton = styled(Button)`
           color : #28ABE3;
         } 
     }
+`
+export const StyledLink = styled(Link)`
+    text-decoration: none;
 `
