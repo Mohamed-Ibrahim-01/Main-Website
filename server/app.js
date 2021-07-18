@@ -6,6 +6,8 @@ const logger = require('morgan')
 
 const Article = require('./models/article.js');
 const Contact = require('./models/contact.js');
+const Magazine = require('./models/magazine.js');
+
 require('dotenv').config()
 
 
@@ -18,6 +20,7 @@ app.use(express.json());
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.urlencoded({ extended: false }));
+app.set('view engine', 'ejs');
 
 //app.use('/', indexRouter);
 
@@ -57,12 +60,24 @@ app.use((err, req, res, next) => {
 //app.use(express.json());
 
 
-app.get('/magazine/', (req, res) => {
+app.get('/magazines', (req, res) => {
+  Magazine.find()
+   .then((result) => {
+       
+       res.render('index', { Magazine : result });
+      
+   })
+   .catch((err) => {
+       console.log(err);
+   })
+})
 
-  console.log('Awesome!');
-    res.sendFile(__dirname + "/Beat test.docx");
-
-});
+app.get('/magazines/:id', (req, res) => {
+  console.log(req.params.id);
+  const ID = req.params.id;
+  
+  res.sendFile(__dirname + "/" + ID + ".pdf")
+})
 
 app.post('/contactUs', (req, res) => {
 
