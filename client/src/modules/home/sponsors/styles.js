@@ -4,7 +4,6 @@ const LOGO_HEIGHT = 72
 
 export const Container = styled.div`
     padding: 5vh 3vw;
-    background: #fff;
 `
 export const Logo = styled.img`
     height: ${LOGO_HEIGHT}px;
