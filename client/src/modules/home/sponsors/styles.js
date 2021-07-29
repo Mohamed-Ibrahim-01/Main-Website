@@ -6,8 +6,8 @@ export const Container = styled.div`
     padding: 5vh 3vw;
 `
 export const Logo = styled.img`
-    height: ${LOGO_HEIGHT}px;
-    width: ${(props) => (props.width * LOGO_HEIGHT)}px;
+    height: ${(props) => LOGO_HEIGHT * props.scale}px;
+    width: ${(props) => (props.width * LOGO_HEIGHT * props.scale)}px;
     @media(max-width: 650px) {
         display:block;
         margin-bottom:20px;

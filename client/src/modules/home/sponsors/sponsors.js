@@ -12,7 +12,9 @@ Sponsors.Title = function SponsorsTitle({ children, ...restProps }) {
 };
 
 Sponsors.Logo = function SponsorsLogo({ children, ...restProps }) {
-  return <Logo {...restProps}>{children}</Logo>;
+  let {scale} = restProps;
+  if(!scale){ scale = 1}
+  return <Logo scale={scale} {...restProps}>{children}</Logo>;
 };
 Sponsors.Carousel = function SponsorsCarousel({children, ...restProps}){
   return(

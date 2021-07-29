@@ -11,7 +11,7 @@ export default function SponsorsContainer() {
                 <Sponsors.Logo src={megatronic} alt="logo" width={1} />
                 <Sponsors.Logo src={ieee} alt="logo" width={1.8}/>
                 <Sponsors.Logo src={emb} alt="logo" width={1.39}/>
-                <Sponsors.Logo src={nekh} alt="logo" width={3.47}/>
+                <Sponsors.Logo src={nekh} alt="logo" width={3.47} scale={.8}/>
             </Sponsors.Carousel>
         </Sponsors>
     )
