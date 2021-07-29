@@ -1,4 +1,4 @@
-import {containerItemGrid, ItemGrid} from 'shared'
+import {ContainerItemGrid, ItemGrid} from 'shared'
 import styled from "styled-components";
 
 export const Container = styled(ItemGrid)`
@@ -22,7 +22,7 @@ export const Description = styled.p`
    color: #000b26;
    margin-bottom: 10vh;
 `
-export const TargetsContainer = styled(containerItemGrid).attrs({md:6, xs:12})`
+export const TargetsContainer = styled(ContainerItemGrid).attrs({md:6, xs:12})`
    && {
       padding: 15px;
       justify-content: center;
