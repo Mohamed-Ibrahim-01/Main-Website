@@ -9,7 +9,7 @@ import {
     FeatureImage,
     FeatureTitle,
     FeatureDescription,
-} from './styles/magazine'
+} from './styles'
 export default function Magazine({ children, ...restProps }) {
     return <StyledContainer {...restProps}> {children} </StyledContainer>
 }

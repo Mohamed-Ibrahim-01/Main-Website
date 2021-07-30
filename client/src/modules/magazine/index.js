@@ -1,7 +1,7 @@
 import React from 'react'
-import Magazine from '../components/magazine'
-import { magazine } from './data/magazine'
-export function MagazineContainer() {
+import Magazine from './magazine'
+import { magazine } from './constants'
+export default function MagazineContainer() {
     return (
         <Magazine>
             <Magazine.Title> BEAT Magazine </Magazine.Title>

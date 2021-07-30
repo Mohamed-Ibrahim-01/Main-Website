@@ -27,7 +27,8 @@ const beats = [
     {
         icon: BusinessTwoToneIcon,
         title: 'Employment',
-        desc: 'Finding suitable mechanisms and ways to connect graduates with work places.', }, {
+        desc: 'Finding suitable mechanisms and ways to connect graduates with work places.', },
+    {
         icon: FlashOnTwoToneIcon,
         title: 'Activation',
         desc: 'Working on removing the obstacles found in the healthcare system.',
