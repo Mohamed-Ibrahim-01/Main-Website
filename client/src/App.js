@@ -8,7 +8,7 @@ function App() {
             <Switch>
                 <Route exact path="/"> <Home /> </Route>
                 <Route path="/ContactUs"> <Contact /> </Route>
-                <Route path="/Magazine"> <Magazine/> </Route>
+                <Route path="/Magazine"> <div id="render-container"></div>  <Magazine/> </Route>
                 {/*
                 <Route path="*"> <NotFound /> </Route>
                 */}

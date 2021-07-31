@@ -1,6 +1,4 @@
-import research from '../../images/research.png'
-import technology from '../../images/cpu.png'
-import engineering from '../../images/medical-report.png'
+import {engineering ,research, technology } from "./images"
 const features = [
     {
         Title: 'Biomedical Engineering',
