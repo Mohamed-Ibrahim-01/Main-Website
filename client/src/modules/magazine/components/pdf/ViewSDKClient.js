@@ -1,3 +1,4 @@
+const {REACT_APP_ADOBE_API_KEY} = process.env
 class ViewSDKClient {
     constructor() {
         this.readyPromise = new Promise((resolve) => {
