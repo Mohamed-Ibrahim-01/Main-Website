@@ -13,7 +13,7 @@ import {
 
 export const Edition = styled(ItemGrid).attrs({})`
   &&{
-    padding: 20px;
+    padding: 10px;
   }
 `
 export const StyledCard = styled(Card).attrs({})`
@@ -82,6 +82,9 @@ export const Feature = styled(Grid)`
 export const Shelf = styled(ContainerGrid)`
   justify-content:center;
   padding: 10vh 10vw;
+  @media(max-width: 948px){
+    padding : 3vh 3vw;
+  }
 `
 export const FeatureImage = styled.img`
   width: 100px;
