@@ -66,6 +66,7 @@ Navbar.Menu = function NavbarMenu({children, ...restProps}){
             >
                 <NavMenuItem to='/' text="Home" icon={<StyledHomeIcon/>}/>
                 <NavMenuItem to='/Magazine' text="Magazine" icon={<StyledImportContactsIcon/>}/>
+                <NavMenuItem to='/ContactUs' text="Contact Us" icon={<StyledImportContactsIcon/>}/>
             </MenuList>
         </MenuContainer>
     )
