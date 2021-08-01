@@ -23,16 +23,12 @@ Sponsors.Carousel = function SponsorsCarousel({children, ...restProps}){
         'infinite',
         {
           resolve: slidesToShowPlugin,
-          options: {
-           numberOfSlides: 6
-          }
+          options: { numberOfSlides: 6 }
         },
         {
           resolve: autoplayPlugin,
-          options: {
-            interval: 2000,
-          }
-        },
+          options: { interval: 2000}
+        }
       ]}
       animationSpeed={1700}
       itemWidth={240}
