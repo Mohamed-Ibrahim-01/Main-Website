@@ -15,7 +15,7 @@ Location.Map = function MapContainer({children, ...restProps}){
 
 function MyMap() {
   return (
-    <Map height={`100%`} defaultCenter={[...LOCATION]} defaultZoom={15}>
+    <Map defaultCenter={[...LOCATION]} defaultZoom={15}>
       <Marker width={40} color={'#DB2A32'} anchor={[...LOCATION]} />
       <ZoomControl buttonStyle={{ background: '#000c26', color: '#DB2A32' }} />
     </Map>
