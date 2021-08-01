@@ -10,7 +10,6 @@ export default function NavBarContainer(){
                 <Navbar.Links>
                     <Navbar.Link to='/'>Home</Navbar.Link>
                     <Navbar.Link to='/ContactUs'>ContactUs</Navbar.Link>
-                    <Navbar.Link to='/Articles'>Articles</Navbar.Link>
                     <Navbar.Link to='/Magazine'>Magazine</Navbar.Link>
                 </Navbar.Links>
                 <Navbar.Menu/>
