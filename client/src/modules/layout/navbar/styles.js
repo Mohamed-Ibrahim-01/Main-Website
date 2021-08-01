@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import {AppBar,Toolbar,Button, IconButton, Menu, MenuItem, ListItemText} from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
+import MessageIcon from '@material-ui/icons/Message';
 import HomeIcon from '@material-ui/icons/Home';
 import {Link} from 'react-router-dom'
 
@@ -121,3 +122,8 @@ export const StyledImportContactsIcon = styled(ImportContactsIcon).attrs({
     }
 })``
 
+export const StyledMessageIcon = styled(MessageIcon).attrs({
+    style: {
+        color: '#fff'
+    }
+})``

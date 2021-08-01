@@ -12,6 +12,7 @@ import {
     MenuButton,
     StyledListItemText,
     StyledImportContactsIcon,
+    StyledMessageIcon,
     MenuList,
     StyledMenuItem,
     StyledHomeIcon
@@ -26,8 +27,12 @@ Navbar.Toolbar = function NavbarToolbar({children, ...restProps}){
     return <StyledToolBar {...restProps}> {children} </StyledToolBar>
 }
 
-Navbar.Logo = function NavbarLogo({...restProps}){
-    return <Logo {...restProps}/>
+Navbar.Logo = function NavbarLogo({to, ...restProps}){
+    return (
+        <StyledLink to={to}>
+            <Logo {...restProps}/>
+        </StyledLink>
+    )
 }
 
 Navbar.Link = function NavbarLink({children, ...restProps}){
@@ -66,7 +71,7 @@ Navbar.Menu = function NavbarMenu({children, ...restProps}){
             >
                 <NavMenuItem to='/' text="Home" icon={<StyledHomeIcon/>}/>
                 <NavMenuItem to='/Magazine' text="Magazine" icon={<StyledImportContactsIcon/>}/>
-                <NavMenuItem to='/ContactUs' text="Contact Us" icon={<StyledImportContactsIcon/>}/>
+                <NavMenuItem to='/ContactUs' text="Contact Us" icon={<StyledMessageIcon/>}/>
             </MenuList>
         </MenuContainer>
     )
