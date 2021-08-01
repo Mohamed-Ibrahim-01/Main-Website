@@ -30,8 +30,7 @@ export default function MagazineContainer() {
                     })}
                 </Magazine.FeatureList>
                 <Magazine.Shelf >
-                    <Magazine.Edition title='Lazard' image={Lazard} description={desc} pdfData={pdfData}/>
-                    <Magazine.Edition title='Lazard' image={Lazard} description={desc} pdfData={pdfData}/>
+                    <Magazine.Edition title='1st Edition' image={Lazard} description={desc} pdfData={pdfData}/>
                 </Magazine.Shelf>
             </Magazine>
         </div>

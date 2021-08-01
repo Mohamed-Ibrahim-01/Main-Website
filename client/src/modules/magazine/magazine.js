@@ -57,7 +57,6 @@ Magazine.Edition = function MagazineEdition({...restProps}){
                 </StyledCardContent>
                 <StyledCardActions>
                     <CardButton pdfData={pdfData} text='Preview'/>
-                    <CardButton pdfData={pdfData} text='Annotate'/>
                 </StyledCardActions>
             </StyledCard>
         </Edition>
