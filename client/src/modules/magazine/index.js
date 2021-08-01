@@ -1,9 +1,10 @@
 import React from 'react'
 import Magazine from './magazine'
 import { magazine } from './constants'
-import Lazard from './images/lazard.jpg'
+import Edition1 from './images/edition1.png'
 
-const desc = `Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica`
+const desc = `The 1st edition of our Magazine sails with us through various fields of biomedical engineering.
+If you want to know what is the role of maintenance engineer, or how to be a bioinformatician, or medical imaging and virtual reality market in BME, or the role of AI in the medical field or even have some fun solving our games and puzzles, click and open our Magazine and enjoy.`
 const pdfData = {pdfURL:"https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf", pdfName:"1st Edition", pdfId: "6d07d124-ac85-43b3-a867-36930f502ac6"}
 export default function MagazineContainer() {
     return (
@@ -30,7 +31,7 @@ export default function MagazineContainer() {
                     })}
                 </Magazine.FeatureList>
                 <Magazine.Shelf >
-                    <Magazine.Edition title='1st Edition' image={Lazard} description={desc} pdfData={pdfData}/>
+                    <Magazine.Edition title='1st Edition' image={Edition1} description={desc} pdfData={pdfData}/>
                 </Magazine.Shelf>
             </Magazine>
         </div>

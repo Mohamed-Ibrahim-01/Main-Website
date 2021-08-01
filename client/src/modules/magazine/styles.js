@@ -17,11 +17,15 @@ export const Edition = styled(ItemGrid).attrs({})`
   }
 `
 export const StyledCard = styled(Card).attrs({})`
-  max-width: 300px;
+  max-width: 350px;
 `
 export const StyledCardActionArea = styled(CardActionArea).attrs({})``
 export const StyledCardMedia = styled(CardMedia).attrs({})`
-  height: 140px;
+  &&{
+    height: 170px;
+    background-size: contain;
+    background-position: center;
+  }
 `
 export const StyledCardContent = styled(CardContent).attrs({})``
 export const StyledCardActions = styled(CardActions).attrs({})``
