@@ -4,11 +4,6 @@ const schema = mongoose.Schema;
 
 const magazineSchema = new schema({
 
-    
-    ID  : {
-        type: Number,
-        required: true
-    },
     Name  : {
         type: String,
         required: true
