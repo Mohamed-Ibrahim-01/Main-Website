@@ -2,6 +2,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const express = require('express')
 const logger = require('morgan')
+const helmet = require("helmet");
 
 const blogRouter = require('./routes/blog.js')
 const contactRouter = require('./routes/contact.js')
@@ -13,6 +14,7 @@ require('dotenv').config()
 const { PORT, DB_URI, WEBSITE_MAIL, TEST_MAIL, WEBSITE_MAIL_PASS } = process.env
 
 const app = express()
+app.use(helmet.hidePoweredBy());
 
 app.use(logger('dev'))
 app.use(express.json())
