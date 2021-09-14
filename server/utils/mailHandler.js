@@ -1,6 +1,5 @@
-
 const nodemailer = require('nodemailer')
-/*
+
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -34,13 +33,14 @@ let mailOptions = {
     `,
 }
 
-transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-        console.log(error)
-    } else {
-        console.log('email sent')
-    }
-})
+exports.sendFeedbackMail = async (feedback) => {
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error)
+        } else {
+            console.log('email sent')
+        }
+    })
+}
 
 
-  */

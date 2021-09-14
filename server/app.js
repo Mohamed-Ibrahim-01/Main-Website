@@ -35,7 +35,9 @@ const serverSpin = async () => {
             useFindAndModify: false,
         })
         app.listen(PORT, listening)
-    } catch (err) {
+    } 
+
+    catch (err) {
         console.log('Error on Spinning the server\n', err)
     }
 }
@@ -45,9 +47,3 @@ function listening() {
 }
 
 serverSpin()
-
-
-
-
-
-
