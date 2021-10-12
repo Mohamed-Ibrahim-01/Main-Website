@@ -10,6 +10,6 @@ exports.sendFeedback = async (req, res, next) => {
         )
     }
     await feedback.save()
-    //await mailHandler.sendFeedBackMail(feedback)
+    await mailHandler.sendFeedbackMail(feedback)
     res.sendStatus(202)
 }

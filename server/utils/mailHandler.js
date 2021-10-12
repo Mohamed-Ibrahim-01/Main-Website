@@ -1,5 +1,8 @@
 const nodemailer = require('nodemailer')
 
+require('dotenv').config()
+const { WEBSITE_MAIL, TEST_MAIL, WEBSITE_MAIL_PASS } = process.env
+
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -22,25 +25,26 @@ function mailOptions(feedback) {
         to: TEST_MAIL,
         subject: 'Contact-Us Feedback [BEAT Website]',
         text: `
-            name : ${feedback.name},
-            email: ${feedback.email},
-            message: ${feedback.message}
+            name : ${feedback.Name},
+            email: ${feedback.Email},
+            message: ${feedback.Message}
         `,
         html: `
             <h2 style="text-align:center;  "> Feedback </h2>
             <hr align=”center” color="#000c26">
 
-            <p style=" font-size: 1.1em"> <b>Name</b>: ${feedback.name}</p>
+            <p style=" font-size: 1.1em"> <b>Name</b>: ${feedback.Name}</p>
             <p style="display:inline; font-size: 1.1em"> <b>Email</b>:
-            <p style="display:inline; font-size: 1.1em;">${feedback.name} </p>
+            <p style="display:inline; font-size: 1.1em;">${feedback.Email} </p>
 
             <div
                 style="${styles}">
                 <h3 style="color:#2276e7">Message</h1>
-                ${contact.message}
+                ${feedback.Message}
             </div>
         `,
     }
+    return generatedMail;
 }
 
 exports.sendFeedbackMail = async (feedback) => {
