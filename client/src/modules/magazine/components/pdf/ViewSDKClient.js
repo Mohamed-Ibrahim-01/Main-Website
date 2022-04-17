@@ -4,20 +4,20 @@ class ViewSDKClient {
         this.readyPromise = new Promise((resolve) => {
             if (window.AdobeDC) {
                 console.log("resolved")
-                resolve();
+                resolve()
             } else {
                 console.log("Wating here")
                 /* Wait for Adobe Document Services PDF Embed API to be ready */
                 document.addEventListener("adobe_dc_view_sdk.ready", () => {
-                    resolve();
-                });
+                    resolve()
+                })
             }
-        });
-        this.adobeDCView = undefined;
+        })
+        this.adobeDCView = undefined
     }
 
     ready() {
-        return this.readyPromise;
+        return this.readyPromise
     }
 
     previewFile(divId, viewerConfig, pdfData) {
@@ -25,13 +25,13 @@ class ViewSDKClient {
         const config = {
             /* Pass your registered client id */
             clientId: REACT_APP_ADOBE_API_KEY,
-        };
+        }
         if (divId) { /* Optional only for Light Box embed mode */
             /* Pass the div id in which PDF should be rendered */
-            config.divId = divId;
+            config.divId = divId
         }
         /* Initialize the AdobeDC View object */
-        this.adobeDCView = new window.AdobeDC.View(config);
+        this.adobeDCView = new window.AdobeDC.View(config)
 
         /* Invoke the file preview API on Adobe DC View object */
         const previewFilePromise = this.adobeDCView.previewFile({
@@ -64,9 +64,9 @@ class ViewSDKClient {
                 //id: "6d07d124-ac85-43b3-a867-36930f502ac6",
                 id: pdfId,
             }
-        }, viewerConfig);
+        }, viewerConfig)
 
-        return previewFilePromise;
+        return previewFilePromise
     }
 
     previewFileUsingFilePromise(divId, filePromise, fileName) {
@@ -76,7 +76,7 @@ class ViewSDKClient {
             clientId: REACT_APP_ADOBE_API_KEY,
             /* Pass the div id in which PDF should be rendered */
             divId,
-        });
+        })
 
         /* Invoke the file preview API on Adobe DC View object */
         this.adobeDCView.previewFile({
@@ -90,13 +90,13 @@ class ViewSDKClient {
                 /* file name */
                 fileName: fileName
             }
-        }, {});
+        }, {})
     }
 
     registerSaveApiHandler() {
         /* Define Save API Handler */
         const saveApiHandler = (metaData, content, options) => {
-            console.log(metaData, content, options);
+            console.log(metaData, content, options)
             return new Promise(resolve => {
                 /* Dummy implementation of Save API, replace with your business logic */
                 setTimeout(() => {
@@ -105,17 +105,17 @@ class ViewSDKClient {
                         data: {
                             metaData: Object.assign(metaData, {updatedAt: new Date().getTime()})
                         },
-                    };
-                    resolve(response);
-                }, 2000);
-            });
-        };
+                    }
+                    resolve(response)
+                }, 2000)
+            })
+        }
 
         this.adobeDCView.registerCallback(
             window.AdobeDC.View.Enum.CallbackType.SAVE_API,
             saveApiHandler,
             {}
-        );
+        )
     }
 
     registerEventsHandler() {
@@ -125,15 +125,15 @@ class ViewSDKClient {
             window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
             /* call back function */
             event => {
-                console.log(event);
+                console.log(event)
             },
             /* options to control the callback execution */
             {
                 /* Enable PDF analytics events on user interaction. */
                 enablePDFAnalytics: true,
             }
-        );
+        )
     }
 }
 
-export default ViewSDKClient;
+export default ViewSDKClient

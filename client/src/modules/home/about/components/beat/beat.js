@@ -1,4 +1,4 @@
-import React from 'react' ;
+import React from "react" 
 import {
     ContainerGrid,
     IconContainer,
@@ -8,7 +8,7 @@ import {
     BeatTitle,
     DescContainer,
     BeatDescription,
-} from './styles'
+} from "./styles"
 
 export default function Beat({ children, ...restProps }) {
     return (
@@ -21,7 +21,7 @@ Beat.Icon = function BeatIcon({ icon, ...restProps }) {
     return (
         <IconContainer {...restProps}>
             <IconButton>
-                <Icon style={{fontSize: '2.65rem', color: '#2276e7' }}></Icon>
+                <Icon style={{fontSize: "2.65rem", color: "#2276e7" }}></Icon>
             </IconButton>
         </IconContainer>
     )

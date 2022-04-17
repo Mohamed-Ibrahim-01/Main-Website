@@ -1,15 +1,15 @@
-import styled from 'styled-components'
-import {Container, Grid} from '@material-ui/core'
-import { ItemGrid, ContainerGrid } from 'shared';
-import { PDFPreviewButton } from './components/pdf'
+import styled from "styled-components"
+import {Container, Grid} from "@material-ui/core"
+import { ItemGrid, ContainerGrid } from "shared"
+import { PDFPreviewButton } from "./components/pdf"
 import {
-  Card ,
-  CardActionArea ,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography
-} from '@material-ui/core' 
+    Card ,
+    CardActionArea ,
+    CardActions,
+    CardContent,
+    CardMedia,
+    Typography
+} from "@material-ui/core" 
 
 export const Edition = styled(ItemGrid).attrs({})`
   &&{
@@ -30,20 +30,20 @@ export const StyledCardMedia = styled(CardMedia).attrs({})`
 export const StyledCardContent = styled(CardContent).attrs({})``
 export const StyledCardActions = styled(CardActions).attrs({})``
 export const CardTitle = styled(Typography).attrs({
-  gutterBottom:true, variant:"h5", component:"h2"
+    gutterBottom:true, variant:"h5", component:"h2"
 })`
   &&{
     text-align: left;
   }
 `
 export const CardDescription = styled(Typography).attrs({
-  variant:"body2", color:"textSecondary",component:"p"
+    variant:"body2", color:"textSecondary",component:"p"
 })`
   &&{
     text-align: left;
   }
 `
-export const CardButton= styled(PDFPreviewButton).attrs({size:'small'})`
+export const CardButton= styled(PDFPreviewButton).attrs({size:"small"})`
   && {
     color: #2276e7;
     font-weight: 400;

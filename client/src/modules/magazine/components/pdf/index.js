@@ -1,1 +1,1 @@
-export {default as PDFPreviewButton} from './Lightbox'
+export {default as PDFPreviewButton} from "./Lightbox"

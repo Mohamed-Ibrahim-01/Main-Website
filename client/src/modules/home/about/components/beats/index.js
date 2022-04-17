@@ -1,6 +1,6 @@
-import React from 'react' ;
-import Beat from '../beat';
-import {BeatsContainerGrid, BeatsContainer, Title, TitleContainer} from './styles';
+import React from "react" 
+import Beat from "../beat"
+import {BeatsContainerGrid, BeatsContainer, Title, TitleContainer} from "./styles"
 
 export default function Beats({ children, ...restProps }) {
     return (

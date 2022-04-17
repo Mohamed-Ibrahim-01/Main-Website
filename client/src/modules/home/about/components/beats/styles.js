@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import {ContainerItemGrid, ItemGrid} from 'shared'
+import styled from "styled-components"
+import {ContainerItemGrid, ItemGrid} from "shared"
 
 export const BeatsContainerGrid = styled(ContainerItemGrid).attrs({ md: 6, xs: 12 })`
     && {
