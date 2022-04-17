@@ -1,6 +1,6 @@
-import React from 'react'
-import Magazine from './magazine'
-import { magazineHeader, magazines } from './constants'
+import React from "react"
+import Magazine from "./magazine"
+import { magazineHeader, magazines } from "./constants"
 
 
 //https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf

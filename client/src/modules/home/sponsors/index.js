@@ -1,6 +1,6 @@
-import React from 'react'
-import Sponsors from './sponsors'
-import {emb, siemens, megatronic, ieee, nekh} from '../images'
+import React from "react"
+import Sponsors from "./sponsors"
+import {emb, siemens, megatronic, ieee, nekh} from "../images"
 
 export default function SponsorsContainer() {
     return (
