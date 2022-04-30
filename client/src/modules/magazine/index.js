@@ -2,8 +2,6 @@ import React from "react"
 import Magazine from "./magazine"
 import { magazineHeader, magazines } from "./constants"
 
-
-//https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf
 export default function MagazineContainer() {
     return (
         <div>
@@ -16,7 +14,7 @@ export default function MagazineContainer() {
                 <Magazine.FeatureList>
                     {magazineHeader.features.map((feature) => {
                         return (
-                            <Magazine.Feature>
+                            <Magazine.Feature key={feature.Title}>
                                 <Magazine.FeatureImage src={feature.Image} />
                                 <Magazine.FeatureTitle>
                                     {feature.Title}
@@ -33,6 +31,7 @@ export default function MagazineContainer() {
                         const {title, image, desc, pdfData} = magazine
                         return (
                             <Magazine.Edition
+                                key={title}
                                 title={title}
                                 image={image}
                                 description={desc}

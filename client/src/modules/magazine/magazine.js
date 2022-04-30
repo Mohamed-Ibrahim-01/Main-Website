@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react"
+import PropTypes from "prop-types"
 import {
     StyledContainer,
     Title,
@@ -18,34 +19,49 @@ import {
     StyledCardActions,
     CardDescription,
     CardButton
-} from './styles'
+} from "./styles"
 
-                    //url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf",
-                //fileName: "Bodea Brochure.pdf",
-                //id: "6d07d124-ac85-43b3-a867-36930f502ac6",
-
-export default function Magazine({ children, ...restProps }) {
-    return <StyledContainer {...restProps}> {children} </StyledContainer>
+export default function Magazine({children}) {
+    return <StyledContainer> {children} </StyledContainer>
 }
 
-Magazine.Title = function MagazineTitle({ children, ...restProps }) {
-    return <Title {...restProps}> {children} </Title>
+Magazine.propTypes = {
+    children: PropTypes.array.isRequired
 }
 
-Magazine.Description = function MagazineDescription({ children, ...restProps }) {
-    return <Description {...restProps}> {children} </Description>
+Magazine.Title = function MagazineTitle({children}) {
+    return <Title> {children} </Title>
 }
 
-Magazine.FeatureList = function MagazineFeatureList({ children, ...restProps }) {
-    return <FeatureList container {...restProps}> {children} </FeatureList>
+Magazine.Title.propTypes = {
+    children: PropTypes.string.isRequired
 }
 
-Magazine.Shelf = function MagazineShelf({ children, ...restProps }) {
-    return <Shelf {...restProps}> {children} </Shelf>
+Magazine.Description = function MagazineDescription({children}) {
+    return <Description> {children} </Description>
 }
 
-Magazine.Edition = function MagazineEdition({...restProps}){
-    const {image, title, description, pdfData} = restProps
+Magazine.Description.propTypes = {
+    children: PropTypes.string.isRequired
+}
+
+Magazine.FeatureList = function MagazineFeatureList({children}) {
+    return <FeatureList container> {children} </FeatureList>
+}
+
+Magazine.FeatureList.propTypes = {
+    children: PropTypes.array.isRequired
+}
+
+Magazine.Shelf = function MagazineShelf({children}) {
+    return <Shelf> {children} </Shelf>
+}
+
+Magazine.Shelf.propTypes = {
+    children: PropTypes.array.isRequired
+}
+
+Magazine.Edition = function MagazineEdition({image, title, description, pdfdata}){
     return(
         <Edition>
             <StyledCard>
@@ -56,29 +72,56 @@ Magazine.Edition = function MagazineEdition({...restProps}){
                     <CardDescription>{description}</CardDescription>
                 </StyledCardContent>
                 <StyledCardActions>
-                    <CardButton pdfData={pdfData} text='Preview'/>
+                    <CardButton pdfdata={pdfdata} text="Preview"/>
                 </StyledCardActions>
             </StyledCard>
         </Edition>
     )
 }
 
-Magazine.FeatureImage = function MagazineImage({ ...restProps }) {
+Magazine.Edition.propTypes = {
+    image: PropTypes.node.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    pdfdata: PropTypes.shape({
+        pdfURL: PropTypes.string.isRequired,
+        pdfName: PropTypes.string.isRequired,
+        pdfId: PropTypes.string.isRequired
+    })
+}
+
+Magazine.FeatureImage = function MagazineImage({src}) {
     return (
         <StyledContainer>
-            <FeatureImage {...restProps} />
+            <FeatureImage src={src}/>
         </StyledContainer>
     )
 }
 
-Magazine.FeatureTitle = function MagazineTitle({ children, ...restProps }) {
-    return <FeatureTitle {...restProps}> {children} </FeatureTitle>
+Magazine.FeatureImage.propTypes = {
+    src: PropTypes.node.isRequired
 }
 
-Magazine.FeatureDescription = function MagazineDescription({ children, ...restProps }) {
-    return <FeatureDescription {...restProps}> {children} </FeatureDescription>
+Magazine.FeatureTitle = function MagazineTitle({children}) {
+    return <FeatureTitle> {children} </FeatureTitle>
 }
 
-Magazine.Feature= function MagazineFeature({ children,item, ...restProps }) {
-    return <Feature container item md={4} sm={4} xs={12} {...restProps}> {children} </Feature>
+Magazine.FeatureTitle.propTypes = {
+    children: PropTypes.string.isRequired
+}
+
+Magazine.FeatureDescription = function MagazineDescription({children}) {
+    return <FeatureDescription> {children} </FeatureDescription>
+}
+
+Magazine.FeatureDescription.propTypes = {
+    children: PropTypes.array.isRequired
+}
+
+Magazine.Feature= function MagazineFeature({ children}) {
+    return <Feature container item md={4} sm={4} xs={12}> {children} </Feature>
+}
+
+Magazine.Feature.propTypes = {
+    children: PropTypes.array.isRequired
 }

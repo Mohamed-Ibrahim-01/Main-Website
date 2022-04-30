@@ -1,30 +1,38 @@
 import React from "react" 
+import PropTypes from "prop-types"
 import Beat from "../beat"
 import {BeatsContainerGrid, BeatsContainer, Title, TitleContainer} from "./styles"
 
-export default function Beats({ children, ...restProps }) {
+export default function Beats({children}) {
     return (
-        <BeatsContainerGrid {...restProps}>{children}</BeatsContainerGrid>
+        <BeatsContainerGrid>{children}</BeatsContainerGrid>
     )
 }
 
-Beats.Title = function BeatsTitle({...restProps }) {
+Beats.propTypes = {
+    children: PropTypes.array.isRequired
+}
+
+Beats.Title = function BeatsTitle() {
     return (
         <TitleContainer>
-            <Title {...restProps} >OUR BEATS</Title>
+            <Title>OUR BEATS</Title>
         </TitleContainer>
     )
 }
 
-Beats.All = function AllBeats({ beats, ...restProps }) {
+Beats.All = function AllBeats({beats}) {
     return (
-        <BeatsContainer {...restProps}>
+        <BeatsContainer>
             {beats.map((beat) => {
                 return (
-                    <Beat icon={beat.icon} title={beat.title} desc={beat.desc} />
+                    <Beat key={beat.title} icon={beat.icon} title={beat.title} desc={beat.desc} />
                 )
             })}
         </BeatsContainer>
     )
 }
 
+Beats.All.propTypes = {
+    beats: PropTypes.array.isRequired
+}
