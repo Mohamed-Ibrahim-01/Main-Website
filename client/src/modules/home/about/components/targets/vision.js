@@ -1,28 +1,33 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Container, Title, Description} from "./styles"
 import { ReactComponent as Img } from "../../../images/vision.svg"
 
-export default function Vision({children, ...restProps}){
+export default function Vision({children}){
     return(
-        <Container {...restProps} >{children}</Container>
+        <Container>{children}</Container>
     )
 }
 
-Vision.Title = function VisionTitle({...restProps}){
+Vision.propTypes = {
+    children: PropTypes.array.isRequired
+}
+
+Vision.Title = function VisionTitle(){
     return(
-        <Title vision {...restProps}>VISION</Title>
+        <Title vision>VISION</Title>
     )
 }
 
-Vision.Img = function VisionImg({children, ...restProps}){
+Vision.Img = function VisionImg(){
     return(
-        <Img {...restProps}/>
+        <Img/>
     )
 }
 
-Vision.Description = function VisionDescription({...restProps}){
+Vision.Description = function VisionDescription(){
     return(
-        <Description vision {...restProps}>Our vision is to develop the stakeholders of entire healthcare system.</Description>
+        <Description vision>Our vision is to develop the stakeholders of entire healthcare system.</Description>
     )
 }
 

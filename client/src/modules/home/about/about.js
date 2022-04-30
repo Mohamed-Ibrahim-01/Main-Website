@@ -5,20 +5,20 @@ import {Beats, Targets, Vision, Mission} from "./components"
 
 export {Vision,Mission,Beats} from "./components"
 
-export default function About({children, ...restProps}){
+export default function About({children}){
     console.log(children)
     return(
-        <Container {...restProps} >{children}</Container>
+        <Container>{children}</Container>
     )
 }
 
 About.propTypes = {
-    children: PropTypes.array
+    children: PropTypes.array.isRequired
 }
 
-About.Title = function AboutTitle({...restProps}){
+About.Title = function AboutTitle(){
     return(
-        <TitleContainer {...restProps}>
+        <TitleContainer>
             <Title> About US &nbsp;
                 <i className="fas fa-info-circle" aria-hidden="true" ></i>
             </Title>
@@ -27,36 +27,32 @@ About.Title = function AboutTitle({...restProps}){
 }
 
 About.Title.propTypes = {
-    children: PropTypes.array
+    children: PropTypes.array.isRequired
 }
 
-About.Targets = function AboutTargets({children, ...restProps}){
+About.Targets = function AboutTargets({children}){
     return(
-        <Targets {...restProps}>{children}</Targets>
+        <Targets>{children}</Targets>
     )
 }
 
 About.Targets.propTypes = {
-    children: PropTypes.array
+    children: PropTypes.array.isRequired
 }
 
-About.Beats = function AboutBeats({children, ...restProps}){
+About.Beats = function AboutBeats({children}){
     return(
-        <Beats {...restProps}>
-            {children}
-        </Beats>
+        <Beats> {children} </Beats>
     )
 }
 
 About.Beats.propTypes = {
-    children: PropTypes.array
+    children: PropTypes.array.isRequired
 }
 
-About.Vision = function AboutVision({children, ...restProps}){
+About.Vision = function AboutVision({children}){
     return(
-        <Vision {...restProps}>
-            {children}
-        </Vision>
+        <Vision> {children} </Vision>
     )
 }
 
@@ -64,15 +60,15 @@ About.Vision.propTypes = {
     children: PropTypes.array
 }
 
-About.Mission = function AboutMission({children, ...restProps}){
+About.Mission = function AboutMission({children}){
     return(
-        <Mission {...restProps}>
+        <Mission>
             {children}
         </Mission>
     )
 }
 
 About.Mission.propTypes = {
-    children: PropTypes.array
+    children: PropTypes.array.isRequired
 }
 
