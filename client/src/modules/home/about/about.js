@@ -6,7 +6,6 @@ import {Beats, Targets, Vision, Mission} from "./components"
 export {Vision,Mission,Beats} from "./components"
 
 export default function About({children}){
-    console.log(children)
     return(
         <Container>{children}</Container>
     )
