@@ -26,10 +26,6 @@ About.Title = function AboutTitle(){
     )
 }
 
-About.Title.propTypes = {
-    children: PropTypes.array.isRequired
-}
-
 About.Targets = function AboutTargets({children}){
     return(
         <Targets>{children}</Targets>

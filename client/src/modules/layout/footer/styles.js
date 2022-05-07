@@ -54,41 +54,34 @@ export const Row = styled.div`
     justify-content: space-around;
     width: 100%;
 `
+const contactStyles = (props) =>{
+    if(props.iscontact === "true"){
+        return `
+            display:flex;
+            align-items: center;
+        `
+    }
+}
+
+const linkStyles = `
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 15px;
+    text-decoration: none;
+    &:hover i {
+        color: #387fde;
+        transition: 200ms ease-in;
+    }
+`
 
 export const Link = styled.a`
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 15px;
-    text-decoration: none;
-    &:hover i {
-        color: #387fde;
-        transition: 200ms ease-in;
-    }
-    ${(props) =>
-        props.contact
-            ? `
-                display:flex;
-                align-items: center;
-            `
-            : ""}
+    ${linkStyles}
+    ${contactStyles}
 `
-export const LocalLink = styled(RouterLink)`
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 15px;
-    text-decoration: none;
 
-    &:hover i {
-        color: #387fde;
-        transition: 200ms ease-in;
-    }
-    ${(props) =>
-        props.contact
-            ? `
-                display:flex;
-                align-items: center;
-            `
-            : ""}
+export const LocalLink = styled(RouterLink)`
+    ${linkStyles}
+    ${contactStyles}
 `
 export const Title = styled.p`
     font-size: 24px;

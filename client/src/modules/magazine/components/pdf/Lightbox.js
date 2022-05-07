@@ -14,11 +14,10 @@ class Lightbox extends Component {
 
     previewFileAsync() {
         this.viewSDKClient.ready().then(() => {
-            /* Invoke file preview */
-            this.viewSDKClient.previewFile("render-container", {
-                /* Pass the embed mode option here */
-                embedMode: "LIGHT_BOX"
-            },this.props.pdfdata)
+            console.log(this.props)
+            this.viewSDKClient.previewFile(
+                "render-container", { embedMode: "LIGHT_BOX" }, this.props.pdfdata
+            )
         })
     }
 

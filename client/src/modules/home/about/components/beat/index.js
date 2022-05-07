@@ -13,7 +13,7 @@ export default function BeatContainer(props){
 }
 
 BeatContainer.propTypes = {
-    icon: PropTypes.node.isRequired,
+    icon: PropTypes.element.isRequired,
     title: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired
 }

@@ -26,9 +26,9 @@ Form.Container.propTypes = {
     onSubmit: PropTypes.func.isRequired,
 }
 
-Form.Input = function FormInput({children, placeholder, icon, registerProps, red}){
+Form.Input = function FormInput({placeholder, icon, registerProps}){
     return(
-        <ContainerItemGrid md={12} xs={12} justify='space-around'>
+        <ContainerItemGrid md={12} xs={12} justifyContent='space-around'>
             <TextInput
                 placeholder={placeholder}
                 InputProps={{
@@ -39,25 +39,21 @@ Form.Input = function FormInput({children, placeholder, icon, registerProps, red
                     )
                 }}
                 {...registerProps}
-                red={red}
             > 
-                {children} 
             </TextInput>
         </ContainerItemGrid>
     )
 }
 
 Form.Input.propTypes = {
-    children: PropTypes.array.isRequired,
     placeholder: PropTypes.string.isRequired,
     icon: PropTypes.node.isRequired,
     registerProps: PropTypes.object.isRequired,
-    red: PropTypes.bool
 }
 
 Form.Message = function FormMessage(){
     return(
-        <ContainerItemGrid md={12} xs={12} justify='space-around'>
+        <ContainerItemGrid md={12} xs={12} justifyContent='space-around'>
             <AreaInput/>
         </ContainerItemGrid>
     )
@@ -65,7 +61,7 @@ Form.Message = function FormMessage(){
 
 Form.Submit = function FormSubmit(){
     return(
-        <ContainerItemGrid md={12} xs={12} justify='space-around'>
+        <ContainerItemGrid md={12} xs={12} justifyContent='space-around'>
             <Submit endIcon={<SendIcon/>} >
                 Send
             </Submit>
@@ -75,7 +71,7 @@ Form.Submit = function FormSubmit(){
 
 Form.Title = function FormTitle(){
     return(
-        <ContainerItemGrid md={12} xs={12} justify='space-around'>
+        <ContainerItemGrid md={12} xs={12} justifyContent='space-around'>
             <Title>
                 Contant Us
             </Title>
@@ -85,7 +81,7 @@ Form.Title = function FormTitle(){
 
 Form.Description = function FormDescription(){
     return(
-        <ContainerItemGrid md={12} xs={12} justify='space-around'>
+        <ContainerItemGrid md={12} xs={12} justifyContent='space-around'>
             <Description>
                 We are always here to help out <b> what ever way we can :)</b>
             </Description>

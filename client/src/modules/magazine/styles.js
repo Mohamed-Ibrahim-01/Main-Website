@@ -62,7 +62,7 @@ export const Title = styled.h1`
   font-size: 3em;
   color: #000b26;
 `
-export const Description = styled.p`
+export const Description = styled.h1`
   text-align: center;
   color: #000E33;
   font-size: 1em;

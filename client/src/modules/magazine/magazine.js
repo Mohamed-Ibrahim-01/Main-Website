@@ -42,7 +42,7 @@ Magazine.Description = function MagazineDescription({children}) {
 }
 
 Magazine.Description.propTypes = {
-    children: PropTypes.string.isRequired
+    children: PropTypes.array.isRequired
 }
 
 Magazine.FeatureList = function MagazineFeatureList({children}) {
@@ -110,12 +110,12 @@ Magazine.FeatureTitle.propTypes = {
     children: PropTypes.string.isRequired
 }
 
-Magazine.FeatureDescription = function MagazineDescription({children}) {
+Magazine.FeatureDescription = function MagazineFeatureDescription({children}) {
     return <FeatureDescription> {children} </FeatureDescription>
 }
 
 Magazine.FeatureDescription.propTypes = {
-    children: PropTypes.array.isRequired
+    children: PropTypes.string.isRequired
 }
 
 Magazine.Feature= function MagazineFeature({ children}) {

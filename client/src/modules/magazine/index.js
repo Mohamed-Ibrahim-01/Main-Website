@@ -9,7 +9,8 @@ export default function MagazineContainer() {
             <Magazine >
                 <Magazine.Title> BEAT Magazine </Magazine.Title>
                 <Magazine.Description>
-                    {magazineHeader.description.a} <b>{magazineHeader.description.b}</b>
+                    <p>{magazineHeader.description.a}</p>
+                    <b>{magazineHeader.description.b}</b>
                 </Magazine.Description>
                 <Magazine.FeatureList>
                     {magazineHeader.features.map((feature) => {
@@ -28,14 +29,14 @@ export default function MagazineContainer() {
                 </Magazine.FeatureList>
                 <Magazine.Shelf >
                     {magazines.map((magazine) => {
-                        const {title, image, desc, pdfData} = magazine
+                        const {title, image, desc, pdfdata} = magazine
                         return (
                             <Magazine.Edition
                                 key={title}
                                 title={title}
                                 image={image}
                                 description={desc}
-                                pdfData={pdfData}
+                                pdfdata={pdfdata}
                             />
                         )
                     })}

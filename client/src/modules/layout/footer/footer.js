@@ -36,7 +36,8 @@ Footer.Column.propTypes = {
 }
 
 Footer.Link = function FooterLink({children, href, iscontact}) {
-    return <Link href={href} iscontact={iscontact}>{children}</Link>
+    if(iscontact == undefined) iscontact = false
+    return <Link href={href} iscontact={iscontact.toString()}>{children}</Link>
 }
 
 Footer.Link.propTypes = {
@@ -46,7 +47,7 @@ Footer.Link.propTypes = {
 }
 
 Footer.LocalLink = function FooterLocalLink({ children, to, iscontact}) {
-    return <LocalLink to={to} iscontact={iscontact}>{children}</LocalLink>
+    return <LocalLink to={to} iscontact={iscontact.toString()}>{children}</LocalLink>
 }
 
 Footer.LocalLink.propTypes = {
@@ -63,12 +64,13 @@ Footer.Title.propTypes = {
     children: PropTypes.string.isRequired,
 }
 
-Footer.Icon = function FooterIcon({className}) {
-    return <Icon className={className}/>
+Footer.Icon = function FooterIcon({className, social}) {
+    return <Icon className={className} social={social}/>
 }
 
 Footer.Icon.propTypes = {
-    className: PropTypes.string.isRequired
+    className: PropTypes.string.isRequired,
+    social: PropTypes.bool
 }
 
 Footer.Mail = function FooterMail({children}) {

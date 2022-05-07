@@ -33,7 +33,7 @@ Beat.Icon = function BeatIcon({icon}) {
 }
 
 Beat.Icon.propTypes = {
-    icon: PropTypes.node.isRequired
+    icon: PropTypes.element
 }
 
 Beat.Info = function BeatInfo({title, desc}) {

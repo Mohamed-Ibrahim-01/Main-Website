@@ -11,7 +11,7 @@ export default function Location({children}){
 }
 
 Location.propTypes = {
-    children: PropTypes.array.isRequired
+    children: PropTypes.object.isRequired
 }
 
 Location.Map = function MapContainer(){
