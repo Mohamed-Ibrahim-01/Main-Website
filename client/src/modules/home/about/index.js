@@ -1,6 +1,6 @@
-import React from 'react'
-import {default as About, Vision, Mission, Beats} from './about'
-import beats from './constants'
+import React from "react"
+import {default as About, Vision, Mission, Beats} from "./about"
+import beats from "./constants"
 
 
 export default function AboutContainer(){

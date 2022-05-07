@@ -1,53 +1,69 @@
-import React from 'react'
-import {Container, TitleContainer, Title} from './styles'
-import {Beats, Targets, Vision, Mission} from './components'
+import React from "react"
+import PropTypes from "prop-types"
+import {Container, TitleContainer, Title} from "./styles"
+import {Beats, Targets, Vision, Mission} from "./components"
 
-export {Vision,Mission,Beats} from './components'
+export {Vision,Mission,Beats} from "./components"
 
-export default function About({children, ...restProps}){
-   return(
-     <Container {...restProps} >{children}</Container>
-   )
+export default function About({children}){
+    return(
+        <Container>{children}</Container>
+    )
 }
 
-About.Title = function AboutTitle({...restProps}){
-   return(
-      <TitleContainer {...restProps}>
-         <Title> About US &nbsp;
-            <i className="fas fa-info-circle" aria-hidden="true" ></i>
-         </Title>
-      </TitleContainer>
-   )
+About.propTypes = {
+    children: PropTypes.array.isRequired
 }
 
-About.Targets = function AboutTargets({children, ...restProps}){
-   return(
-      <Targets {...restProps}>{children}</Targets>
-   )
+About.Title = function AboutTitle(){
+    return(
+        <TitleContainer>
+            <Title> About US &nbsp;
+                <i className="fas fa-info-circle" aria-hidden="true" ></i>
+            </Title>
+        </TitleContainer>
+    )
 }
 
-About.Beats = function AboutBeats({children, ...restProps}){
-   return(
-      <Beats {...restProps}>
-         {children}
-      </Beats>
-   )
+About.Targets = function AboutTargets({children}){
+    return(
+        <Targets>{children}</Targets>
+    )
 }
 
-About.Vision = function AboutVision({children, ...restProps}){
-   return(
-      <Vision {...restProps}>
-         {children}
-      </Vision>
-   )
+About.Targets.propTypes = {
+    children: PropTypes.array.isRequired
 }
 
-About.Mission = function AboutMission({children, ...restProps}){
-   return(
-      <Mission {...restProps}>
-         {children}
-      </Mission>
-   )
+About.Beats = function AboutBeats({children}){
+    return(
+        <Beats> {children} </Beats>
+    )
 }
 
+About.Beats.propTypes = {
+    children: PropTypes.array.isRequired
+}
+
+About.Vision = function AboutVision({children}){
+    return(
+        <Vision> {children} </Vision>
+    )
+}
+
+About.Vision.propTypes = {
+    children: PropTypes.array
+}
+
+About.Mission = function AboutMission({children}){
+    return(
+        <Mission>
+            {children}
+        </Mission>
+    )
+}
+
+About.Mission.propTypes = {
+    children: PropTypes.array.isRequired
+}
 

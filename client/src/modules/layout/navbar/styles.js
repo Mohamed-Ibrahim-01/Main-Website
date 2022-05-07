@@ -1,10 +1,10 @@
-import styled from 'styled-components'
-import {AppBar,Toolbar,Button, IconButton, Menu, MenuItem, ListItemText} from '@material-ui/core'
-import MenuIcon from '@material-ui/icons/Menu';
-import ImportContactsIcon from '@material-ui/icons/ImportContacts';
-import MessageIcon from '@material-ui/icons/Message';
-import HomeIcon from '@material-ui/icons/Home';
-import {Link} from 'react-router-dom'
+import styled from "styled-components"
+import {AppBar,Toolbar,Button, IconButton, Menu, MenuItem, ListItemText} from "@material-ui/core"
+import MenuIcon from "@material-ui/icons/Menu"
+import ImportContactsIcon from "@material-ui/icons/ImportContacts"
+import MessageIcon from "@material-ui/icons/Message"
+import HomeIcon from "@material-ui/icons/Home"
+import {Link} from "react-router-dom"
 
 export const StyledAppBar = styled(AppBar)`
     &&&{
@@ -84,12 +84,12 @@ export const MenuContainer = styled.div``
 export const MenuList = styled(Menu).attrs({
     getContentAnchorEl: null,
     anchorOrigin:{
-      vertical: 'bottom',
-      horizontal: 'left',
+        vertical: "bottom",
+        horizontal: "left",
     },
     transformOrigin:{
-      vertical: 'top',
-      horizontal: 'center',
+        vertical: "top",
+        horizontal: "center",
     }
 })`
     && .MuiPaper-root {
@@ -112,18 +112,18 @@ export const StyledListItemText = styled(ListItemText)`
 `
 export const StyledHomeIcon = styled(HomeIcon).attrs({
     style: {
-        color: '#fff'
+        color: "#fff"
     }
 })``
 
 export const StyledImportContactsIcon = styled(ImportContactsIcon).attrs({
     style: {
-        color: '#fff'
+        color: "#fff"
     }
 })``
 
 export const StyledMessageIcon = styled(MessageIcon).attrs({
     style: {
-        color: '#fff'
+        color: "#fff"
     }
 })``

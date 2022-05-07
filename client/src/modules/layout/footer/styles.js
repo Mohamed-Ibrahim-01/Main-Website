@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import {Link as RouterLink} from 'react-router-dom'
+import styled from "styled-components"
+import {Link as RouterLink} from "react-router-dom"
 
 export const Container = styled.div`
     padding: 5vh 3vw;
@@ -7,7 +7,7 @@ export const Container = styled.div`
 `
 
 export const Icon = styled.i`
-    font-size: ${(props) => (props.social ? '2.3em' : '1.5em')};
+    font-size: ${(props) => (props.social ? "2.3em" : "1.5em")};
     margin-right: 20px;
 `
 export const Mail = styled.p`
@@ -33,7 +33,7 @@ export const icons = styled.div`
 export const Column = styled.div`
     display: flex;
     flex-direction: column;
-    text-align: ${(props) => (props.social ? 'center' : 'left')};
+    text-align: ${(props) => (props.social ? "center" : "left")};
     justify-content: center;
     margin: 0px 15px;
     @media (max-width: 650px) {
@@ -54,41 +54,34 @@ export const Row = styled.div`
     justify-content: space-around;
     width: 100%;
 `
+const contactStyles = (props) =>{
+    if(props.iscontact === "true"){
+        return `
+            display:flex;
+            align-items: center;
+        `
+    }
+}
+
+const linkStyles = `
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 15px;
+    text-decoration: none;
+    &:hover i {
+        color: #387fde;
+        transition: 200ms ease-in;
+    }
+`
 
 export const Link = styled.a`
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 15px;
-    text-decoration: none;
-    &:hover i {
-        color: #387fde;
-        transition: 200ms ease-in;
-    }
-    ${(props) =>
-        props.contact
-            ? `
-                display:flex;
-                align-items: center;
-            `
-            : ''}
+    ${linkStyles}
+    ${contactStyles}
 `
-export const LocalLink = styled(RouterLink)`
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 15px;
-    text-decoration: none;
 
-    &:hover i {
-        color: #387fde;
-        transition: 200ms ease-in;
-    }
-    ${(props) =>
-        props.contact
-            ? `
-                display:flex;
-                align-items: center;
-            `
-            : ''}
+export const LocalLink = styled(RouterLink)`
+    ${linkStyles}
+    ${contactStyles}
 `
 export const Title = styled.p`
     font-size: 24px;

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+import React, { useState } from "react"
+import PropTypes from "prop-types"
+import ListItemIcon from "@material-ui/core/ListItemIcon"
 import {
     StyledAppBar,
     StyledToolBar,
@@ -17,52 +18,74 @@ import {
     StyledMenuItem,
     StyledHomeIcon
 
-} from './styles'
+} from "./styles"
 
-export default function Navbar({children, ...restProps}){
-    return <StyledAppBar {...restProps}> {children} </StyledAppBar>
+export default function Navbar({children}){
+    return <StyledAppBar> {children} </StyledAppBar>
 }
 
-Navbar.Toolbar = function NavbarToolbar({children, ...restProps}){
-    return <StyledToolBar {...restProps}> {children} </StyledToolBar>
+Navbar.propTypes= {
+    children: PropTypes.node.isRequired
 }
 
-Navbar.Logo = function NavbarLogo({to, ...restProps}){
+Navbar.Toolbar = function NavbarToolbar({children}){
+    return <StyledToolBar> {children} </StyledToolBar>
+}
+
+Navbar.Toolbar.propTypes= {
+    children: PropTypes.array.isRequired
+}
+
+Navbar.Logo = function NavbarLogo({to, src, alt}){
     return (
         <StyledLink to={to}>
-            <Logo {...restProps}/>
+            <Logo  src={src} alt={alt}/>
         </StyledLink>
     )
 }
 
-Navbar.Link = function NavbarLink({children, ...restProps}){
+Navbar.Logo.propTypes= {
+    to: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+    src: PropTypes.node.isRequired
+}
+
+Navbar.Link = function NavbarLink({children, to}){
     return (
-        <StyledLink {...restProps}>
+        <StyledLink to={to}>
             <StyledButton> {children} </StyledButton>
         </StyledLink>
     )
 }
 
-Navbar.Links = function NavbarLinks({children, ...restProps}){
+Navbar.Link.propTypes= {
+    to: PropTypes.string.isRequired,
+    children: PropTypes.string.isRequired
+}
+
+Navbar.Links = function NavbarLinks({children}){
     return (
-        <LinksContainer {...restProps}>{children}</LinksContainer>
+        <LinksContainer>{children}</LinksContainer>
     )
 }
 
+Navbar.Links.propTypes= {
+    children: PropTypes.array.isRequired
+}
 
-Navbar.Menu = function NavbarMenu({children, ...restProps}){
-    const [anchorEl, setAnchorEl] = useState(null);
+Navbar.Menu = function NavbarMenu(){
+    const [anchorEl, setAnchorEl] = useState(null)
 
     const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
+        setAnchorEl(event.currentTarget)
+    }
 
     const handleClose = () => {
-        setAnchorEl(null);
-    };
+        setAnchorEl(null)
+    }
 
     return (
-        <MenuContainer {...restProps}>
+        <MenuContainer>
             <NavMenuButton onClick={handleClick}/>
             <MenuList
                 anchorEl={anchorEl}
@@ -77,10 +100,14 @@ Navbar.Menu = function NavbarMenu({children, ...restProps}){
     )
 }
 
-function NavMenuButton({children, ...restProps}){
+function NavMenuButton({onClick}){
     return (
-        <MenuButton {...restProps}> <StyledMenuIcon /> </MenuButton>
+        <MenuButton onClick={onClick}> <StyledMenuIcon /> </MenuButton>
     )
+}
+
+NavMenuButton.propTypes={
+    onClick: PropTypes.func.isRequired
 }
 
 function NavMenuItem(props){
@@ -93,4 +120,10 @@ function NavMenuItem(props){
             </StyledMenuItem>
         </StyledLink >
     )
+}
+
+NavMenuItem.propTypes= {
+    to: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    icon: PropTypes.node.isRequired
 }

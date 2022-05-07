@@ -1,5 +1,5 @@
-import {ContainerItemGrid, ItemGrid} from 'shared'
-import styled from "styled-components";
+import {ContainerItemGrid, ItemGrid} from "shared"
+import styled from "styled-components"
 
 export const Container = styled(ItemGrid)`
    && {
@@ -14,11 +14,11 @@ export const Title = styled.h1`
    color: #d1242a;
    margin-top: 0px;
    font-size: 1.8em;
-   margin-bottom: ${(props) => (props.vision ? '7vh' : '11vh')};
+   margin-bottom: ${(props) => (props.vision ? "7vh" : "11vh")};
 `
 export const Description = styled.p`
    font-size: 1.25em;
-   margin-top: ${(props) => (props.vision ? '4vh' : '11vh')};
+   margin-top: ${(props) => (props.vision ? "4vh" : "11vh")};
    color: #000b26;
    margin-bottom: 10vh;
 `

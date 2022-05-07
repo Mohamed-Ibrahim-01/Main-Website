@@ -1,4 +1,5 @@
-import React from 'react' ;
+import React from "react" 
+import PropTypes from "prop-types"
 import {
     ContainerGrid,
     IconContainer,
@@ -8,28 +9,36 @@ import {
     BeatTitle,
     DescContainer,
     BeatDescription,
-} from './styles'
+} from "./styles"
 
-export default function Beat({ children, ...restProps }) {
+export default function Beat({children}) {
     return (
-        <ContainerGrid {...restProps}>{children}</ContainerGrid>
+        <ContainerGrid>{children}</ContainerGrid>
     )
 }
 
-Beat.Icon = function BeatIcon({ icon, ...restProps }) {
+Beat.propTypes = {
+    children: PropTypes.array.isRequired
+}
+
+Beat.Icon = function BeatIcon({icon}) {
     const Icon = icon
     return (
-        <IconContainer {...restProps}>
+        <IconContainer>
             <IconButton>
-                <Icon style={{fontSize: '2.65rem', color: '#2276e7' }}></Icon>
+                <Icon style={{fontSize: "2.65rem", color: "#2276e7" }}></Icon>
             </IconButton>
         </IconContainer>
     )
 }
 
-Beat.Info = function BeatInfo({ children, title, desc, ...restProps }) {
+Beat.Icon.propTypes = {
+    icon: PropTypes.element
+}
+
+Beat.Info = function BeatInfo({title, desc}) {
     return (
-        <InfoContainer {...restProps}>
+        <InfoContainer>
             <TitleContainer >
                 <BeatTitle>{title}</BeatTitle>
             </TitleContainer>
@@ -38,4 +47,9 @@ Beat.Info = function BeatInfo({ children, title, desc, ...restProps }) {
             </DescContainer>
         </InfoContainer>
     )
+}
+
+Beat.Info.propTypes = {
+    title: PropTypes.string.isRequired,
+    desc: PropTypes.node.isRequired,
 }
