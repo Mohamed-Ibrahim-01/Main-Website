@@ -1,9 +1,7 @@
-import React from 'react'
-import Magazine from './magazine'
-import { magazineHeader, magazines } from './constants'
+import React from "react"
+import Magazine from "./magazine"
+import { magazineHeader, magazines } from "./constants"
 
-
-//https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf
 export default function MagazineContainer() {
     return (
         <div>
@@ -11,12 +9,13 @@ export default function MagazineContainer() {
             <Magazine >
                 <Magazine.Title> BEAT Magazine </Magazine.Title>
                 <Magazine.Description>
-                    {magazineHeader.description.a} <b>{magazineHeader.description.b}</b>
+                    <p>{magazineHeader.description.a}</p>
+                    <b>{magazineHeader.description.b}</b>
                 </Magazine.Description>
                 <Magazine.FeatureList>
                     {magazineHeader.features.map((feature) => {
                         return (
-                            <Magazine.Feature>
+                            <Magazine.Feature key={feature.Title}>
                                 <Magazine.FeatureImage src={feature.Image} />
                                 <Magazine.FeatureTitle>
                                     {feature.Title}
@@ -30,13 +29,14 @@ export default function MagazineContainer() {
                 </Magazine.FeatureList>
                 <Magazine.Shelf >
                     {magazines.map((magazine) => {
-                        const {title, image, desc, pdfData} = magazine
+                        const {title, image, desc, pdfdata} = magazine
                         return (
                             <Magazine.Edition
+                                key={title}
                                 title={title}
                                 image={image}
                                 description={desc}
-                                pdfData={pdfData}
+                                pdfdata={pdfdata}
                             />
                         )
                     })}

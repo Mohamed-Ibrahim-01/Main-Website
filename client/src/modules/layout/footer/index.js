@@ -1,5 +1,5 @@
-import React from 'react'
-import Footer from './footer'
+import React from "react"
+import Footer from "./footer"
 export default function FooterContainer() {
     return (
         <Footer>
@@ -30,17 +30,17 @@ export default function FooterContainer() {
                     </Footer.Column>
 
                     <Footer.Column id="contacts">
-                        <Footer.LocalLink to="/ContactUs" contact>
+                        <Footer.LocalLink to="/ContactUs" iscontact>
                             <Footer.Icon className="fas fa-map-marker-alt" />
                             Faculty of Engineering, Cairo University.
                         </Footer.LocalLink>
 
-                        <Footer.Link contact >
+                        <Footer.Link iscontact >
                             <Footer.Icon className="fas fa-phone-alt" />
                             Phone number
                         </Footer.Link>
 
-                        <Footer.Link contact href="mailto:beat.sbme.official@gmail.com" >
+                        <Footer.Link iscontact href="mailto:beat.sbme.official@gmail.com" >
                             <Footer.Icon className="far fa-envelope" />
                             <Footer.Mail > beat.sbme.official@gmail.com </Footer.Mail>
                         </Footer.Link>

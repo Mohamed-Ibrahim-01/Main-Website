@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import {Home, Navbar, Footer, Contact, Magazine} from './modules'
+import { React, BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import {Home, Navbar, Footer, Contact, Magazine} from "./modules"
 
 function App() {
     return (

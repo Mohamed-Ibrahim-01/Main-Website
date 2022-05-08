@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import {ContainerItemGrid, ContainerGrid} from 'shared'
+import styled from "styled-components"
+import {ContainerItemGrid, ContainerGrid} from "shared"
 
 export const Container = styled(ContainerGrid)``
 export const TitleContainer = styled(ContainerItemGrid).attrs({md:12, xs:12})`

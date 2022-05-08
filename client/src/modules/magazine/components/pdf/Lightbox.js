@@ -1,29 +1,39 @@
-import React, { Component } from "react";
-import ViewSDKClient from "./ViewSDKClient";
-import {Button} from '@material-ui/core'
+import React, { Component } from "react"
+import PropTypes from "prop-types"
+import ViewSDKClient from "./ViewSDKClient"
+import {Button} from "@material-ui/core"
 
 class Lightbox extends Component {
     constructor(props) {
-        super(props);
-        this.viewSDKClient = new ViewSDKClient();
+        super(props)
+        this.viewSDKClient = new ViewSDKClient()
+        this.previewFile = ()=>{
+            this.previewFileAsync()
+        }
     }
 
-    previewFile = () => {
-        console.log(this.props.pdfData);
+    previewFileAsync() {
         this.viewSDKClient.ready().then(() => {
-            /* Invoke file preview */
-            this.viewSDKClient.previewFile("render-container", {
-                /* Pass the embed mode option here */
-                embedMode: "LIGHT_BOX"
-            },this.props.pdfData);
-        });
+            this.viewSDKClient.previewFile(
+                "render-container", { embedMode: "LIGHT_BOX" }, this.props.pdfdata
+            )
+        })
     }
 
     render() {
         return (
-                <Button {...this.props} onClick={ this.previewFile }> {this.props.text} </Button>
-        );
+            <Button {...this.props} onClick={ this.previewFile }> {this.props.text} </Button>
+        )
     }
 }
 
-export default Lightbox;
+Lightbox.propTypes = {
+    text: PropTypes.string.isRequired,
+    pdfdata: PropTypes.shape({
+        pdfURL: PropTypes.string.isRequired,
+        pdfName: PropTypes.string.isRequired,
+        pdfId: PropTypes.string.isRequired
+    })
+}
+
+export default Lightbox

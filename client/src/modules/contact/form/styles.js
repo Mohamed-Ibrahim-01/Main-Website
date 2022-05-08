@@ -1,7 +1,7 @@
 //import {FormGrid, Container, TextInput, AreaInput} from './styles'
-import styled from 'styled-components'
-import {ContainerItemGrid} from 'shared'
-import {TextField, Button,TextareaAutosize} from '@material-ui/core'
+import styled from "styled-components"
+import {ContainerItemGrid} from "shared"
+import {TextField, Button,TextareaAutosize} from "@material-ui/core"
 
 
 export const FormGrid = styled(ContainerItemGrid).attrs({ xs:12, md:6})`
@@ -33,7 +33,7 @@ export const TextInput = styled(TextField)`
 ` 
 
 export const Submit = styled(Button).attrs({
-  variant: "contained",
+    variant: "contained",
 })`
   &&, &&:focus, &&:hover{
     background-color:#000c26;
@@ -44,9 +44,9 @@ export const Submit = styled(Button).attrs({
 `
 
 export const AreaInput = styled(TextareaAutosize).attrs({
-  minRows:5,
-  maxRows:8,
-  placeholder:"Write your message" ,
+    minRows:5,
+    maxRows:8,
+    placeholder:"Write your message" ,
 })`
   resize: none;
   font-size: 1em;
