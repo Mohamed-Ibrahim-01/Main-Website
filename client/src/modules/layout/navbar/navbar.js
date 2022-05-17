@@ -16,7 +16,9 @@ import {
     StyledMessageIcon,
     MenuList,
     StyledMenuItem,
-    StyledHomeIcon
+    StyledHomeIcon,
+    CloseButton,
+    StyledCloseIcon
 
 } from "./styles"
 
@@ -75,18 +77,21 @@ Navbar.Links.propTypes= {
 
 Navbar.Menu = function NavbarMenu(){
     const [anchorEl, setAnchorEl] = useState(null)
-
+    const [toggle, setToggle]=React.useState(true)
+    
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget)
+        setToggle(toggle => !toggle)
     }
 
     const handleClose = () => {
         setAnchorEl(null)
+        setToggle(toggle => !toggle)
     }
 
     return (
         <MenuContainer>
-            <NavMenuButton onClick={handleClick}/>
+            <button1 onClick ={handleClick}  >{toggle?<NavMenuButton/>:<NavCloseButton/>}</button1>
             <MenuList
                 anchorEl={anchorEl}
                 open={Boolean(anchorEl)}
@@ -105,8 +110,16 @@ function NavMenuButton({onClick}){
         <MenuButton onClick={onClick}> <StyledMenuIcon /> </MenuButton>
     )
 }
+function NavCloseButton({onClick}){
+    return(<CloseButton onClick={onClick}> <StyledCloseIcon /> </CloseButton>
+    )
+   
+}
 
 NavMenuButton.propTypes={
+    onClick: PropTypes.func.isRequired
+}
+NavCloseButton.propTypes={
     onClick: PropTypes.func.isRequired
 }
 
