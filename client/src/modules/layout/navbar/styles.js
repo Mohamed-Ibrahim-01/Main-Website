@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import {AppBar,Toolbar,Button, IconButton, Menu, MenuItem, ListItemText} from "@material-ui/core"
 import MenuIcon from "@material-ui/icons/Menu"
+import CloseIcon from "@material-ui/icons/Close"
 import ImportContactsIcon from "@material-ui/icons/ImportContacts"
 import MessageIcon from "@material-ui/icons/Message"
 import HomeIcon from "@material-ui/icons/Home"
@@ -78,7 +79,29 @@ export const StyledMenuIcon = styled(MenuIcon)`
        color: #DB2A32;
     }
 `
-
+export const CloseButton = styled(IconButton)`
+    &&{
+       margin-right:20px;
+    }
+    @media (min-width: 650px) {
+        && {
+            display none;
+           
+        }
+    }
+`
+export const StyledCloseIcon = styled(CloseIcon)`
+    &&{
+       font-size: 1.5em;
+       color: #DB2A32;
+       
+    }
+`
+export const button1 = styled(Button)`
+    &&&{
+        background-color : #000B26;
+    }
+`
 export const MenuContainer = styled.div``
 
 export const MenuList = styled(Menu).attrs({
