@@ -42,7 +42,7 @@ export const magazines = [
     {
         title: "2nd Edition",
         image: edition2,
-        desc: "The 1st edition of our Magazine sails with us through various fields of biomedical engineering.  If you want to know what is the role of maintenance engineer, or how to be a bioinformatician, or medical imaging and virtual reality market in BME, or the role of AI in the medical field or even have some fun solving our games and puzzles, click and open our Magazine and enjoy.",
+        desc: "The 2nd edition of our magazine takes us on a journey into the world of neuroscience. Open the magazine and learn more about Neuroscience, its history and modernism, how the human nervous system works, and ways of measuring brain activity. Don’t forget to have some fun with our games at the end.",
         pdfdata: {
             pdfURL: "https://dl.dropboxusercontent.com/s/y68wv6btsmycvdq/Magazine%27s%202nd%20edition.pdf",
             pdfName: "2nd Edition",
